@@ -1,0 +1,18 @@
+<h1>Lista wszystkich wpisów</h1>
+<p><%= link_to "Stwórz nowy wpis", new_todo_path %></p>
+<table>
+  <tr>
+    <th>Nazwa</th>
+    <th>Opis</th>
+    <th>Edytuj</th>
+    <th>Pokaż</th>
+  </tr>
+  <% @todos.each do |l| %>
+  <tr>
+    <td><%= l.name %></td>
+    <td><%= l.description %></td>
+    <td><%= link_to "Edytuj", edit_todo_path(l) %></td>
+    <td><%= link_to "Pokaż", todo_path(l) %></td>
+  </tr>
+  <% end %>
+</table>

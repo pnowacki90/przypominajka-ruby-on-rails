@@ -5,7 +5,7 @@ class TodosController < ApplicationController
   end
   
   def index
-    
+    @todos = Todo.all
   end
   
   def destroy
