@@ -13,7 +13,8 @@ class TodosController < ApplicationController
   end
   
   def edit
-    
+    @todo = Todo.find(params[:id])
+
   end
   
   def new
@@ -31,7 +32,13 @@ class TodosController < ApplicationController
   end
   
   def update
-    
+    @todo = Todo.find(params[:id])
+    if @todo.update(todo_params)
+      flash[:notice] = "Zaktualizowano wpis"
+      redirect_to todo_path(@todo)
+    else
+      render 'edit'
+    end
   end
   
   private
