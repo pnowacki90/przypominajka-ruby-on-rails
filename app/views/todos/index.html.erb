@@ -13,6 +13,7 @@
     <td><%= l.description %></td>
     <td><%= link_to "Edytuj", edit_todo_path(l) %></td>
     <td><%= link_to "Pokaż", todo_path(l) %></td>
+    <td><%= link_to "Usuń", todo_path(l), method: :delete, data: {confirm: "Na pewno?"} %></td>
   </tr>
   <% end %>
 </table>
