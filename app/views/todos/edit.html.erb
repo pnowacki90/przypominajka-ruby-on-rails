@@ -1,25 +1,2 @@
 <h2>Editing a Todo</h2>
-
-<% if @todo.errors.any? %>
-  <h2>Były błędy:</h2>
-  <ul>
-    <% @todo.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_for @todo do |f| %>
-  <p>
-    <%= f.label :name, "Imie" %><br>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-  <%= f.label :description, "Opis" %><br>
-  <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-<%= link_to "Wróć to wszystkich", todos_path %>
+<%= render 'new_edit_form' %>
